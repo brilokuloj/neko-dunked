@@ -2,13 +2,15 @@ services:
   neko:
     image: "ghcr.io/m1k1o/neko/firefox:latest"
     restart: "unless-stopped"
-    shm_size: "2gb"
     ports:
       - "8080:8080"
-      - "52000-52100:52000-52100/udp"
+      - "56000-56100:56000-56100/udp"
+    volumes:
+      - "./client/dist:/var/www"
     environment:
       NEKO_DESKTOP_SCREEN: 1920x1080@30
-      NEKO_MEMBER_MULTIUSER_USER_PASSWORD: neko
-      NEKO_MEMBER_MULTIUSER_ADMIN_PASSWORD: admin
-      NEKO_WEBRTC_EPR: 52000-52100
-      NEKO_WEBRTC_ICELITE: 1
+      NEKO_ROOMS_NEKO_IMAGES: "ghcr.io/m1k1o/neko/firefox:dunked"
+      NEKO_MEMBER_MULTIUSER_USER_PASSWORD: "neko"
+      NEKO_MEMBER_MULTIUSER_ADMIN_PASSWORD: "admin"
+      NEKO_WEBRTC_EPR: "56000-56100"
+      NEKO_WEBRTC_NAT1TO1: "192.168.0.13"
