@@ -103,6 +103,15 @@
 
     get emotes() {
       return [
+        'BFDI2',
+        'BFDI4',
+        'ESCoping',
+        'ESEmu',
+        'ESHole',
+        'ESNotCoping',
+        'ESPiper',
+        'IIMePhone4',
+        
         'anger',
         'bomb',
         'sleep',

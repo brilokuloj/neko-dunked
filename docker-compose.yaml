@@ -9,7 +9,6 @@ services:
       - "./client/dist:/var/www"
     environment:
       NEKO_DESKTOP_SCREEN: 1920x1080@30
-      NEKO_ROOMS_NEKO_IMAGES: "ghcr.io/m1k1o/neko/firefox:dunked"
       NEKO_MEMBER_MULTIUSER_USER_PASSWORD: "neko"
       NEKO_MEMBER_MULTIUSER_ADMIN_PASSWORD: "admin"
       NEKO_WEBRTC_EPR: "56000-56100"
